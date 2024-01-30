@@ -1,7 +1,5 @@
 import { Stack } from "@cyann/ts-commons"
 
-const world = 'world';
-
 class Context {
 
   private readonly _src: string
@@ -78,7 +76,7 @@ function parseN(ctx: Context): boolean {
 function parseA(ctx: Context): boolean {
   if (ctx.canReduce('A', '+', 'N')) {
     ctx.reduce('A')
-    return true
+    return parseA(ctx)
   } else if (ctx.canReduce('N')) {
     ctx.reduce('A')
     return true
@@ -94,7 +92,7 @@ export function parse(src: string) {
 
   //for (let i = 0; i < 10; i++)
 
-  while(parseA(ctx)){}
+  parseA(ctx)
 
 }
 
