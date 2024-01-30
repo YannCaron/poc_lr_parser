@@ -1,5 +1,5 @@
 import Context from "./Context";
-import parseA from "./algo1";
+import parseA from "./algo2";
 
 export function parse(src: string) {
   console.log(`Parsing expression: '${src}';`);
